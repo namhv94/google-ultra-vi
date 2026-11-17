@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ultra 开通助手</title>
+<title>Trợ lý kích hoạt Ultra</title>
 <style>
   *{box-sizing:border-box}
   body{margin:0;background:#0b0d11;color:#e8eaf0;font:15px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
@@ -44,62 +44,63 @@
 </head>
 <body>
 <div class="wrap">
-  <div class="brand"><span class="dot"></span><h1>Ultra 开通助手</h1></div>
-  <div class="sub">登录、绑卡、点一下。剩余步骤在这页面里完成，不用装东西。</div>
+  <div class="brand"><span class="dot"></span><h1>Trợ lý kích hoạt Ultra</h1></div>
+  <div class="sub">Đăng nhập, liên kết thẻ, nhấn một cái. Các bước còn lại ngay trên trang này — không cần cài đặt gì.</div>
 
   <div class="step">
-    <div class="idx">第一步</div>
-    <h2>登录谷歌账号</h2>
-    <p>用要开的那个号。登录完回来，这个页面会自动识别。</p>
-    <a class="btn" href="https://accounts.google.com/" target="_blank" rel="noopener">去登录</a>
-    <span id="loginState" style="margin-left:12px;font-size:13px;color:#6d768a">未检测</span>
+    <div class="idx">Bước 1</div>
+    <h2>Đăng nhập tài khoản Google</h2>
+    <p>Dùng đúng tài khoản cần kích hoạt. Sau khi đăng nhập, quay lại đây — trang sẽ tự nhận diện.</p>
+    <a class="btn" href="https://accounts.google.com/" target="_blank" rel="noopener">Đi đăng nhập</a>
+    <span id="loginState" style="margin-left:12px;font-size:13px;color:#6d768a">Chưa phát hiện</span>
   </div>
 
   <div class="step">
-    <div class="idx">第二步</div>
-    <h2>绑一张卡</h2>
-    <p>卡里放 1 美元就行，试用期间不扣。已经绑过就跳过。</p>
-    <a class="btn" href="https://pay.google.com/gp/w/u/0/home/paymentmethods" target="_blank" rel="noopener">去绑卡</a>
+    <div class="idx">Bước 2</div>
+    <h2>Liên kết một thẻ</h2>
+    <p>Chỉ cần có 1 USD trong thẻ, không bị trừ trong thời gian dùng thử. Đã liên kết rồi thì bỏ qua.</p>
+    <a class="btn" href="https://pay.google.com/gp/w/u/0/home/paymentmethods" target="_blank" rel="noopener">Đi liên kết thẻ</a>
   </div>
 
   <div class="step">
-    <div class="idx">第三步</div>
-    <h2>选一个开通</h2>
-    <p>点完会开新标签跳到 Google 结算页，确认金额是 0 再点订阅。</p>
+    <div class="idx">Bước 3</div>
+    <h2>Chọn một gói để kích hoạt</h2>
+    <p>Sau khi bấm sẽ mở tab mới tới trang thanh toán Google; kiểm tra số tiền là 0 rồi mới bấm đăng ký.</p>
     <div class="plans">
       <div class="plan" data-key="20tb">
-        <span class="tag">推荐</span>
+        <span class="tag">Khuyên dùng</span>
         <div class="n">Ultra 20 TB</div>
-        <div class="c">免费 12 个月</div>
-        <div class="a">之后 US$99.99/月</div>
+        <div class="c">Miễn phí 12 tháng</div>
+        <div class="a">Sau đó US$99.99/tháng</div>
       </div>
       <div class="plan" data-key="30tb">
         <div class="n">Ultra 30 TB</div>
-        <div class="c">免费 1 个月</div>
-        <div class="a">之后 US$199.99/月</div>
+        <div class="c">Miễn phí 1 tháng</div>
+        <div class="a">Sau đó US$199.99/tháng</div>
       </div>
     </div>
-    <label class="opt"><input type="checkbox" id="legacy"> 兼容模式（用内置指纹，个别浏览器要开这个）</label>
+    <label class="opt"><input type="checkbox" id="legacy"> Chế độ tương thích (dùng vân tay có sẵn, một số trình duyệt cần bật)</label>
   </div>
 
   <div class="panel" id="panel">
-    <div class="t" id="panelTitle">链接已生成</div>
+    <div class="t" id="panelTitle">Đã tạo liên kết</div>
     <code id="link"></code>
     <div class="row">
-      <button class="btn primary" id="open">打开</button>
-      <button class="btn" id="copy">复制链接</button>
+      <button class="btn primary" id="open">Mở</button>
+      <button class="btn" id="copy">Sao chép liên kết</button>
     </div>
   </div>
 
   <div class="note">
-    <b>开完记得取消自动续费</b>。路径：Play 商店 → 头像 → 付款和订阅 → 订阅 → Google One → 取消。取消后已经用掉的时间不受影响。<br><br>
-    <b>出现 400</b>：说明这个浏览器跟链接里的指纹对不上。先勾上「兼容模式」再点一次；还不行把链接复制到你要开通账号所在的浏览器里打开。<br><br>
-    <b>提示「不符合免费试用条件」</b>：这个号没资格，换一个。需要已绑卡且当前没有任何 Google One 订阅，一个号基本只有一次机会。
+    <b>⚠️ Cảnh báo</b>: Chỉ tham khảo; tự động hóa dùng thử có thể vi phạm ToS của Google; hủy trước 12 tháng nếu không muốn bị tính $99.99/tháng.<br><br>
+    <b>Nhớ hủy gia hạn tự động sau khi kích hoạt</b>. Đường dẫn: Play Store → Ảnh đại diện → Thanh toán và đăng ký → Đăng ký → Google One → Hủy. Thời gian đã dùng không bị ảnh hưởng sau khi hủy.<br><br>
+    <b>Gặp lỗi 400</b>: trình duyệt này không khớp với vân tay trong liên kết. Hãy tick «Chế độ tương thích» rồi thử lại; nếu vẫn lỗi, sao chép liên kết và mở trong trình duyệt đang đăng nhập tài khoản cần kích hoạt.<br><br>
+    <b>Báo «Không đủ điều kiện dùng thử miễn phí»</b>: tài khoản này không đủ điều kiện, hãy đổi tài khoản khác. Cần đã liên kết thẻ và hiện không có đăng ký Google One nào; mỗi tài khoản thường chỉ có một lần.
   </div>
 </div>
 
 <script>
-/* ---------- 内置指纹（来自真实客户端，作兜底） ---------- */
+/* ---------- Vân tay có sẵn (từ client thật, dùng làm phương án dự phòng) ---------- */
 const FP_TEMPLATE = "W1tudWxsLG51bGwsbnVsbCxbbnVsbCxbIlJzMi4wLjY6OjpzMTExLDIsMjZiNWUxOSwwLDc2OSxhMDYzZWJlOSwwLDRhMixlZGQ5OGJhYywwLDE4LDQ4NjNmZDM1LDAsNzY5LGNiMmQ1YzZmLDAsNDdlLDZhZDQ3YzZjLDAsNTNlLDdiZGI0OWY2LDAsNDI4LGI2NTQwMjAwLDAsNzY5LGVlYTgyMGI2LDAsNDdlLDFhYTQzMzEsMCxcIldpbjMyLGY1NDY4M2YyLDAsXCJHb29nbGUgSW5jLixhZjc5NDUxNSwwLFwiNS4wIDI4V2luZG93cyBOVCAxMC4wM2IgV2luNjQzYiB4NjQyOSBBcHBsZVdlYktpdDJmNTM3LjM2IDI4S0hUTUwyYyBsaWtlIEdlY2tvMjkgQ2hyb21lMmYxMjUuMC4wLjAgU2FmYXJpMmY1MzcuMzYsZDgxNzIzZDEsMCxcImVuMmRVUyw1Y2MzYWI1ZiwwLFwiTW96aWxsYTJmNS4wIDI4V2luZG93cyBOVCAxMC4wM2IgV2luNjQzYiB4NjQyOSBBcHBsZVdlYktpdDJmNTM3LjM2IDI4S0hUTUwyYyBsaWtlIEdlY2tvMjkgQ2hyb21lMmYxMjUuMC4wLjAgU2FmYXJpMmY1MzcuMzYsMjRhNjZkZjYsMCwxMmMsXCJXZWQgRGVjIDMxIDE5NjkgMTlhMDAzYTAwIEdNVDJkMDUwMCAyOEVhc3Rlcm4gU3RhbmRhcmQgVGltZTI5LDJjYTA1NTRmLFwiUERGIFZpZXdlciwwLFwiUG9ydGFibGUgRG9jdW1lbnQgRm9ybWF0LFwiQ2hyb21lIFBERiBWaWV3ZXIsMCxcIlBvcnRhYmxlIERvY3VtZW50IEZvcm1hdCxcIkNocm9taXVtIFBERiBWaWV3ZXIsMCxcIlBvcnRhYmxlIERvY3VtZW50IEZvcm1hdCxcIk1pY3Jvc29mdCBFZGdlIFBERiBWaWV3ZXIsMCxcIlBvcnRhYmxlIERvY3VtZW50IEZvcm1hdCxcIldlYktpdCBidWlsdDJkaW4gUERGLDAsXCJQb3J0YWJsZSBEb2N1bWVudCBGb3JtYXQsNmM4YjlkNWIsNzcwYzY3ZmMsMCwwOmEyMSwzLDFhMWRkYzkzMmQ0LDAsODQsMTphNDAsXCJmLDFhMWRkYzkzMmQ1Il0sIk1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMjUuMC4wLjAgU2FmYXJpLzUzNy4zNiIsImh0dHBzOi8vcGF5bWVudHMuZ29vZ2xlLmNvbSJdLG51bGwsbnVsbCwiZW4iLDEsMV0sWyJodHRwczovL3BheW1lbnRzLmdvb2dsZS5jb20vcGF5bWVudHMvcmVkaXJlY3RfZm9ybV9sYW5kaW5nP3N1Y2Nlc3M9dHJ1ZSIsImh0dHBzOi8vcGF5bWVudHMuZ29vZ2xlLmNvbS9wYXltZW50cy9yZWRpcmVjdF9mb3JtX2xhbmRpbmc/c3VjY2Vzcz1mYWxzZSJdXQ==";
 
 const PATH = "/plans?g1_last_touchpoint=37&g1_landing_page=1&otzr=1";
@@ -108,35 +109,35 @@ const OFFERS = {
   "30tb": { sku: "g1.play.ai.pro",  token: "AYrTWi7nBQ2Zn0z4s+QJOwg9kQRwH3+z+HXpzRqw9IIU4/C48vPvjH32Bub8SHrWq3YX+yI4g1wJgviYiLCobJNqc9DqRd9WZnDdaQ==" }
 };
 
-/* 把 / - ; ( ) , : 换成客户端内部用的两字节编码 */
+/* Thay / - ; ( ) , : bằng mã 2 byte dùng nội bộ ở client */
 function enc(s) {
   return s.replace(/\//g, "2f").replace(/-/g, "2d").replace(/;/g, "3b")
           .replace(/\(/g, "28").replace(/\)/g, "29").replace(/,/g, "2c")
           .replace(/:/g, "3a");
 }
 
-/* 用当前浏览器的真实信息重建指纹 */
+/* Tái tạo vân tay từ thông tin thật của trình duyệt hiện tại */
 function buildFingerprint() {
   try {
     const raw = atob(FP_TEMPLATE);
     const ua = navigator.userAgent;
     const plat = /Mac/.test(navigator.platform) ? "MacIntel"
                : /Win/.test(navigator.platform) ? "Win32" : navigator.platform || "Linux x86_64";
-    const tz = new Date(0).toString();              // Wed Dec 31 1969 16:00:00 GMT-0800 (Pacific Standard Time)
+    const tz = new Date(0).toString();              // Giá trị mẫu: Wed Dec 31 1969 16:00:00 GMT-0800 (Giờ chuẩn Thái Bình Dương)
     const lang = navigator.language || "en";
 
     let s = raw;
-    // 明文 UA（尾部）
+    // UA dạng thường (phần cuối)
     s = s.split("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36").join(ua);
-    // 摘要里的平台
+    // Nền tảng trong bản tóm tắt
     s = s.split('\\"Win32').join('\\"' + plat);
-    // 摘要里的 UA（已编码）
+    // UA trong bản tóm tắt (đã mã hóa)
     s = s.split("5.0 28Windows NT 10.03b Win643b x6429 AppleWebKit2f537.36 28KHTML2c like Gecko29 Chrome2f125.0.0.0 Safari2f537.36")
          .join(enc(ua.replace(/^Mozilla\//, "")));
-    // 时区串
+    // Chuỗi múi giờ
     s = s.split("Wed Dec 31 1969 193a003a00 GMT2d0500 28Eastern Standard Time29")
          .join(enc(tz));
-    // 语言
+    // Ngôn ngữ
     s = s.split('"en",1,1').join('"' + lang + '",1,1');
 
     return btoa(s);
@@ -164,7 +165,7 @@ function buildUrl(key, legacy) {
     + encodeURIComponent(JSON.stringify(ear)) + gapi;
 }
 
-/* ---------- 交互 ---------- */
+/* ---------- Tương tác ---------- */
 let lastUrl = "";
 const panel = document.getElementById("panel");
 
@@ -174,8 +175,8 @@ document.querySelectorAll(".plan").forEach(el => {
     lastUrl = buildUrl(el.dataset.key, legacy);
     document.getElementById("link").textContent = lastUrl;
     document.getElementById("panelTitle").textContent =
-      (el.dataset.key === "20tb" ? "Ultra 20 TB · 12 个月" : "Ultra 30 TB · 1 个月")
-      + (legacy ? "（兼容模式）" : "（已按你的浏览器生成指纹）");
+      (el.dataset.key === "20tb" ? "Ultra 20 TB · 12 tháng" : "Ultra 30 TB · 1 tháng")
+      + (legacy ? "(Chế độ tương thích)" : "(Đã tạo vân tay theo trình duyệt của bạn)");
     panel.classList.add("show");
     window.open(lastUrl, "_blank");
   });
@@ -188,22 +189,22 @@ document.getElementById("open").addEventListener("click", () => {
 document.getElementById("copy").addEventListener("click", () => {
   const btn = document.getElementById("copy");
   navigator.clipboard.writeText(lastUrl).then(() => {
-    btn.textContent = "已复制";
-    setTimeout(() => { btn.textContent = "复制链接"; }, 1500);
+    btn.textContent = "Đã sao chép";
+    setTimeout(() => { btn.textContent = "Sao chép liên kết"; }, 1500);
   });
 });
 
-/* 顺手探测一下有没有登录过谷歌 */
+/* Kiểm tra luôn xem đã đăng nhập Google chưa */
 (function probe() {
   const el = document.getElementById("loginState");
   fetch("https://accounts.google.com/ListAccounts?gpsia=1&source=ChromiumBrowser&json=standard", { credentials: "include" })
     .then(r => r.json())
     .then(d => {
       const n = (d && d[1] && d[1].length) || 0;
-      if (n > 0) el.innerHTML = '<span class="ok">已登录</span>';
-      else el.textContent = "未检测到登录";
+      if (n > 0) el.innerHTML = '<span class="ok">Đã đăng nhập</span>';
+      else el.textContent = "Không phát hiện đăng nhập";
     })
-    .catch(() => { el.textContent = "未检测到登录"; });
+    .catch(() => { el.textContent = "Không phát hiện đăng nhập"; });
 })();
 </script>
 </body>
